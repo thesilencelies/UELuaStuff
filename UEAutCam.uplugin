@@ -1,0 +1,28 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "UEAutCam",
+	"Version" : 2,
+	"VersionName" : "2.0",
+	"CreatedBy" : "Stephen Lilico: Overview Ltd",
+	"CreatedByURL" : "http://www.overview.co.uk",
+	"EngineVersion" : "4.14.0",
+	"Description" : "Plugin that manages the interface between deep learning software and the simulation.",
+	"Category" : "Simulation",
+	"EnabledByDefault" : true,
+	"Installed": true,
+	
+	"Modules" :
+	[
+		{
+			"Name" : "UEAutCam",
+			"Type" : "Runtime",
+            "LoadingPhase" : "PreLoadingScreen"
+		},
+        {
+            "Name" : "UEAutCamEditor",
+			"Type" : "Editor",
+            "LoadingPhase" : "PostEngineInit"
+        }
+	]
+}

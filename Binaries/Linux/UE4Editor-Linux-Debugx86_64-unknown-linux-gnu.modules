@@ -1,0 +1,9 @@
+{
+	"Changelist" : 0,
+	"BuildId" : "65da1f81-e5d0-4f58-8400-5cfcfc6046f3",
+	"Modules" : 
+	{
+		"UEAutCam" : "libUE4Editor-UEAutCam-Linux-Debug.so",
+		"UEAutCamEditor" : "libUE4Editor-UEAutCamEditor-Linux-Debug.so"
+	}
+}

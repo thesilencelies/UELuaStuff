@@ -1,0 +1,9 @@
+{
+	"Changelist" : 0,
+	"BuildId" : "8124b470-179e-457a-a0c1-76530b843813",
+	"Modules" : 
+	{
+		"UEAutCam" : "libUE4Editor-UEAutCam.so",
+		"UEAutCamEditor" : "libUE4Editor-UEAutCamEditor.so"
+	}
+}

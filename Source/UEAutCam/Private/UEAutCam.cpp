@@ -18,7 +18,6 @@ protected:
     static bool LoadDependency(const FString& Dir, const FString& Name, void*& Handle);
 
     static void * handles[NAUTCAMHANDLE];
-    static void * asmhandle;
     static FString handlenames[NAUTCAMHANDLE];
 };
 
@@ -26,7 +25,6 @@ IMPLEMENT_MODULE( FUEAutCam, UEAutCam )
 
 /*initialise the statics*/
 void * FUEAutCam::handles [NAUTCAMHANDLE]= {nullptr,nullptr,nullptr,nullptr,nullptr,nullptr,nullptr,nullptr};
-void * FUEAutCam::asmhandle = nullptr;
 FString FUEAutCam::handlenames[NAUTCAMHANDLE] = {"ffi","libpaths","libluajit","libtorch","libsys","libnnx","libimage","lfs"};
 
 void FUEAutCam::StartupModule()
@@ -43,7 +41,6 @@ void FUEAutCam::ShutdownModule()
     {
         FreeDependency(handles[i]);
     }
-    FreeDependency(asmhandle);
 }
 
 bool FUEAutCam::Initialize()
@@ -65,15 +62,6 @@ bool FUEAutCam::Initialize()
 		    return false;
 	    }
     }
-   //ASMFFI loading
-   if(!LoadDependency(FPaths::Combine(TEXT("/home/stephen-lilico/CamContLua/ASMLua/"),TEXT("build")),TEXT("libASM_FFI"),asmhandle))
-   {
-      for(int j = 0; j < NAUTCAMHANDLE; j++)
-            {
-                FreeDependency(handles[j]);
-            }
-		    return false;
-   }
 	
     return true;
 }
